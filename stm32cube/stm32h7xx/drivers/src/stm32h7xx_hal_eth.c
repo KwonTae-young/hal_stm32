@@ -2703,7 +2703,7 @@ static void ETH_DMARxDescListInit(ETH_HandleTypeDef *heth)
   WRITE_REG(heth->Instance->DMACRDLAR, (uint32_t) heth->Init.RxDesc);
 
   /* Set Receive Descriptor Tail pointer Address */
-  WRITE_REG(heth->Instance->DMACRDTPR, ((uint32_t)(heth->Init.RxDesc + (((uint32_t)(ETH_RX_DESC_CNT - 1))*sizeof(ETH_DMADescTypeDef)))));
+  WRITE_REG(heth->Instance->DMACRDTPR, ((uint32_t)(heth->Init.RxDesc) + ((uint32_t)(ETH_RX_DESC_CNT - 1))));
 }
 
 /**
